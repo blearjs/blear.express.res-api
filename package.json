@@ -1,0 +1,59 @@
+{
+  "name": "blear.express.res-api",
+  "version": "1.0.0",
+  "description": "express 中间件：添加 res.api",
+  "scripts": {
+    "live": "browser-sync start --config bs-config.js",
+    "test-travis": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly",
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha",
+    "prepublish": "npm test"
+  },
+  "preferGlobal": false,
+  "bin": {},
+  "engines": {
+    "node": ">=1.0.0",
+    "iojs": ">=1.0.0"
+  },
+  "main": "src/index.js",
+  "keywords": [
+    "blear",
+    "node",
+    "template",
+    "express",
+    "cloudcome",
+    "ydr.me"
+  ],
+  "author": {
+    "name": "cloudcome",
+    "email": "cloudcome@163.com",
+    "url": "http://ydr.me"
+  },
+  "contributors": [],
+  "homepage": "https://github.com/blearjs/blear.node.template",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blearjs/blear.node.template"
+  },
+  "bugs": {
+    "url": "https://github.com/blearjs/blear.node.template/issues"
+  },
+  "dependencies": {
+    "blear.node.http-status": "^1.0.0",
+    "blear.polyfills.array": "^1.0.3",
+    "blear.polyfills.object": "^1.0.1",
+    "blear.utils.access": "^1.0.2",
+    "blear.utils.array": "^1.0.4",
+    "blear.utils.collection": "^1.0.3",
+    "blear.utils.object": "^1.0.2",
+    "blear.utils.typeis": "^1.0.2"
+  },
+  "peerDependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "express": "^4.13.4",
+    "istanbul": "^0.4.3",
+    "mocha": "^2.4.5",
+    "supertest": "^1.2.0"
+  },
+  "license": "MIT"
+}
