@@ -158,7 +158,7 @@ describe('测试文件', function () {
 
                 console.log(res.headers);
                 console.log(res.text);
-                expect(res.text).to.equal('{"code":10001,"message":"呵呵"}');
+                expect(res.text).to.equal('{"code":10001,"result":null,"message":"呵呵"}');
                 done();
             });
     });
@@ -208,7 +208,7 @@ describe('测试文件', function () {
 
                 console.log(res.headers);
                 console.log(res.text);
-                expect(res.text).to.equal('{"code":901,"message":"测试语法错误"}');
+                expect(res.text).to.equal('{"code":901,"result":null,"message":"测试语法错误"}');
                 done();
             });
     });
@@ -236,7 +236,7 @@ describe('测试文件', function () {
 
                 console.log(res.headers);
                 console.log(res.text);
-                expect(res.text).to.equal('{"code":500,"message":"网络错误"}');
+                expect(res.text).to.equal('{"code":500,"result":null,"message":"网络错误"}');
                 done();
             });
     });

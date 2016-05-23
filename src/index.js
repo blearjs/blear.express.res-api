@@ -49,36 +49,39 @@ module.exports = function (app, options) {
          *   message: 响应消息
          * }
          * ```
-         * @param code {Number|*} 响应状态码，200 表示正常
-         * @param [result] {*} 响应结果
-         * @param [message] {String} 响应消息
+         * @param _code {Number|*} 响应状态码，200 表示正常
+         * @param [_result] {*} 响应结果
+         * @param [_message] {String} 响应消息
          */
-        res.api = function (code, result, message) {
+        res.api = function (_code, _result, _message) {
+            var code;
+            var result = null;
+            var message;
             var args = access.args(arguments);
 
             switch (args.length) {
                 case 0:
                     code = 200;
-                    result = null;
                     message = httpStatus.get(code);
                     break;
 
                 case 1:
                     // res.api(500);
-                    if (typeis.Number(args[0])) {
-                        result = null;
-                        message = httpStatus.get(code);
+                    if (typeis.Number(_code)) {
+                        code = _code;
+                        message = httpStatus.get(_code);
                     }
                     // res.api(err);
-                    else if (typeis.Error(args[0])) {
-                        var err = object.assign({}, args[0], options);
-
+                    else if (typeis.Error(_code)) {
                         if (options.rewriteError) {
                             code = options.errorCode;
                             message = options.errorMessage;
                         } else {
-                            code = err.errorCode;
-                            message = err.errorMessage;
+                            var err = _code;
+                            code = typeis.Null(err.code) || typeis.Undefined(err.code) ?
+                                options.errorCode : err.code;
+                            message = typeis.Null(err.message) || typeis.Undefined(err.message) ?
+                                options.errorMessage : err.message;
                         }
                     }
                     // res.api(result);
@@ -91,11 +94,14 @@ module.exports = function (app, options) {
 
                 // res.api(code, message);
                 case 2:
-                    message = args[1];
-                    result = undefined;
+                    code = _code;
+                    message = _result;
                     break;
 
                 case 3:
+                    code = _code;
+                    result = _result;
+                    message = _message;
                     break;
             }
 
