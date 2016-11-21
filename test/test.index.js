@@ -56,7 +56,7 @@ describe('测试文件', function () {
 
                 console.log(res.headers);
                 console.log(res.text);
-                expect(res.text).to.equal('{"code":200,"result":null,"message":"OK"}');
+                expect(res.text).to.equal('{"code":200,"result":200}');
                 done();
             });
     });
@@ -81,7 +81,7 @@ describe('测试文件', function () {
 
                 console.log(res.headers);
                 console.log(res.text);
-                expect(res.text).to.have.string('xxx({"code":200,"result":null,"message":"OK"});');
+                expect(res.text).to.have.string('xxx({"code":200,"result":200});');
                 done();
             });
     });

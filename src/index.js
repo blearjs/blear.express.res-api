@@ -66,13 +66,8 @@ module.exports = function (app, options) {
                     break;
 
                 case 1:
-                    // res.api(500);
-                    if (typeis.Number(_code)) {
-                        code = _code;
-                        message = httpStatus.get(_code);
-                    }
                     // res.api(err);
-                    else if (typeis.Error(_code)) {
+                    if (typeis.Error(_code)) {
                         if (options.rewriteError) {
                             code = options.errorCode;
                             message = options.errorMessage;

@@ -1,6 +1,6 @@
 {
   "name": "blear.express.res-api",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "express 中间件：添加 res.api",
   "scripts": {
     "live": "browser-sync start --config bs-config.js",
