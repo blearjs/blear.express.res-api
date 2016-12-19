@@ -1,6 +1,6 @@
 {
   "name": "blear.express.res-api",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "express 中间件：添加 res.api",
   "scripts": {
     "live": "browser-sync start --config bs-config.js",
@@ -38,12 +38,12 @@
     "url": "https://github.com/blearjs/blear.node.template/issues"
   },
   "dependencies": {
-    "blear.node.http-status": "^1.0.0",
-    "blear.utils.access": "^1.0.2",
-    "blear.utils.array": "^1.0.4",
-    "blear.utils.collection": "^1.0.3",
-    "blear.utils.object": "^1.0.2",
-    "blear.utils.typeis": "^1.0.2"
+    "blear.node.http-status": "1.x",
+    "blear.utils.access": "1.x",
+    "blear.utils.array": "1.x",
+    "blear.utils.collection": "1.x",
+    "blear.utils.object": "1.x",
+    "blear.utils.typeis": "1.x"
   },
   "peerDependencies": {},
   "devDependencies": {
